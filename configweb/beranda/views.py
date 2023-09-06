@@ -7,3 +7,10 @@ def beranda(request):
         'title':'Beranda | UKMandiri'
     }
     return render(request,'beranda/beranda.html',context) 
+
+    
+def daftar(request):
+    context ={
+        'title':'Daftar'
+    }
+    return render(request,'beranda/beranda.html',context)
