@@ -2,16 +2,14 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block contents %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
 <!-- SHOWOFF 1 -->
-    <div class="container py-5 bg-light" data-aos="fade-up" >
+<hr>
+    <div class="container-fluid bg-light" data-aos="fade-up" >
         <div class="row">
-            <div class="col-md-6">
-                <img src=" {% static 'img/1.png' %}" alt="" class="img-fluid mb-3">
-            </div>
-            <div class="col-md-6">
+            <div class="col">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
                 <h2>UKMandiri</h2>
                 <p class="lead">
                     UKMandiri adalah sebuah Koperasi yang akan membantu anda untuk Usaha Kecil Anda
@@ -19,15 +17,18 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
                     vitae, velit fugiat magni neque consectetur incidunt perspiciatis cum
                     et sapiente eaque doloremque sequi. Vero et blanditiis velit dolor.</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-                    ab nemo velit rem vel est dolor suscipit delectus nulla. Laboriosam
-                    ducimus est iusto maiores qui eaque nam quod perferendis reiciendis.</p>
+                    <a href="http://" class="btn btn-success">Hubungin Kami <<</a>
+
+                        </div>
+            <div class="col-md-6">
+                <img src=" {% static 'img/logo.png' %}" alt="" class="img-fluid mb-3" style="height: 300px; width:300px">
+            </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-        </div>
-    </div>
-</div>
 <div class="container">
     <div class="row">
         <div class="col-md-12">

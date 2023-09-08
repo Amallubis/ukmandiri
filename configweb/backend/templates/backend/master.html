@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="icon" href="{% static 'img/favicon.png' %} " type="image/png">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'font/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="200">
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">UKMandiri</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Tentang UKmandiri</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Link Terkait
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://enter-academy.com">Enter Academy</a></li>
+                            <li><a class="dropdown-item" href="https://kopjas-emp.com">Kopjas-emp</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Privacy Policy</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-danger" type="submit">Contact Us</button>
+            </div>
+        </div>
+    </nav>
+
+    {% block dashboard %}{% endblock dashboard %}
+    <!-- FOOTER -->
+    <footer id="main-footer" class="text-white text-center bg-primary py-5" data-aos="fade-up">
+        <div class="container">
+            <div class="row">
+                <div class="text-md-start col-md-4 me-auto">
+                    <h5>UKMandiri</h5>
+                    <p>
+                        UKM Mandiri berpusat di Lubuk Pakam
+                    </p>
+                    <small>&copy; UKMandiri 2021</small>
+                </div>
+                <div class="text-md-start col-md-4 mt-4 mt-md-0">
+                    <h5>Hubungi Kami</h5>
+                    <div><i class="bi-envelope fs-5 me-3"></i>ukmandiri2018@gmail.com</div>
+                    <div><i class="bi-phone fs-5 me-3"></i>(021) 123456</div>
+                    <div><i class="bi-globe fs-5 me-3"></i>www.ukmandiri.com</div>
+                    <div class="pt-3">
+                        <a href="#" class="text-white text-decoration-none me-2">
+                            <i class="bi-facebook fs-5"></i>
+                        </a>
+                        <a href="#" class="text-white text-decoration-none me-2">
+                            <i class="bi-twitter fs-5"></i>
+                        </a>
+                        <a href="#" class="text-white text-decoration-none me-2">
+                            <i class="bi-instagram fs-5"></i>
+                        </a>
+                        <a href="#" class="text-white text-decoration-none me-2">
+                            <i class="bi-whatsapp fs-5"></i>
+                        </a>
+                        <a href="#" class="text-white text-decoration-none me-2">
+                            <i class="bi-github fs-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'js/aos.js' %}"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800,
+        });
+    </script>
+</body>
+
+</html>
