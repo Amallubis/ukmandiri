@@ -36,120 +36,31 @@
             <div class="col text-center">
                 <h1>Product Kami</h1>
                 <hr class="w-25 mx-auto">
-                <p class="lead">From individuals to large enterprises, our pricing
-                    plans help learners access the depth and breadth of the expert
-                    content they need to solve in-the-moment challenges or learn for
-                    a lifetime. Compare and pick the option that’s right for you.</p>
+                <p class="lead">
+                    Berikut Product yang kami tawarkan
+                    </p>
             </div>
         </div>
 
         <div class="row">
-
+                    {% for p in promosi  %}
             <div class="col-md-4 mt-4 ">
                 <div class="card text-center">
                     <div class="card-header bg-dark text-white">
-                        <h3 class="pt-2">Kopjas-emp</h3>
+                        <h3 class="pt-2">{{p.judul}}</h3>
                     </div>
                     <div class="card-body">
-                        <img src="{% static 'img/logokopjas.png' %}" alt="" srcset="" style="height:200px; width:200px">
+                        <img src="{{p.logo.url}}" alt="" srcset="" style="height:200px; width:200px">
                         <p class="card-text">
-                            Kopjas adalah Koperasi untuk membantu kegiatan usaha anda seperti pembuatan legal usaha
+                            {{p.keterangan}}
                             </p>
-                        <hr class="w-75 mx-auto">
-                        <ul class="list-unstyled text-start">
-                            <li class="m-2 ms-3">
-                                <i class="bi-check-circle-fill me-2"></i>Pembuatan PT 
-                            </li>
-                            <li class="m-2 ms-3">
-                                <i class="bi-check-circle-fill me-2"></i>Pembuatan CV
-                            </li>
-                            <li class="m-2 ms-3">
-                                <i class="bi-check-circle-fill me-2"></i>Branding Usaha
-                            </li>
-                            <li class="m-2 ms-3">
-                                <i class="bi-check-circle-fill me-2"></i>Tax & Accounting
-                            </li>
-                            <li class="m-2 ms-3">
-                                <i class="bi-check-circle-fill me-2"></i>Virtual Office
-                            </li>
-                        </ul>
                     </div>
                     <div class="card-footer text-muted d-flex ">
-                        <a href="https://kopjas-emp.com" class="btn btn-success flex-grow-1">Detail</a>
+                        <a href="{{p.link}}" class="btn btn-success flex-grow-1">Detail</a>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-4 mt-4">
-                <div class="card text-center">
-                    <div class="card-header bg-dark text-white">
-                        <h3 class="pt-2">Enter Academy</h3>
-                    </div>
-                    <div class="card-body">
-                        <img src="{% static 'img/logoenter.png' %}" alt="" srcset="" style="height:200px; width:200px">
-                        <p class="card-text">Class aptent taciti sociosqu ad torquent
-                            conubia nostra, per inceptos hymenaeos.</p>
-                        <hr class="w-75 mx-auto">
-                        <ul class="list-unstyled text-start">
-                            <li class="m-2 ms-3">
-                                <i class="bi-check-circle-fill me-2"></i>View Site Activity
-                            </li>
-                            <li class="m-2 ms-3">
-                                <i class="bi-check-circle-fill me-2"></i>View Members Directory
-                            </li>
-                            <li class="m-2 ms-3">
-                                <i class="bi-check-circle-fill me-2"></i>Access to Groups Directory
-                            </li>
-                            <li class="m-2 ms-3">
-                                <i class="bi-check-circle-fill me-2"></i>Premium Online Course
-                            </li>
-                            <li class="m-2 ms-3">
-                                <i class="bi-check-circle-fill me-2"></i>Online and Phone Support
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-footer text-muted d-flex ">
-                        <a href="https://enter-academy.com" class="btn btn-success flex-grow-1">Register</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4 mt-4">
-                <div class="card text-center">
-                    <div class="card-header bg-dark text-white">
-                        <h3 class="pt-2">Koperasi</h3>
-                    </div>
-                    <div class="card-body">
-                        <img src="{% static 'img/logo.png' %}" alt="" srcset="" style="height:200px; width:200px">
-                        <p class="card-text">Morbi leo mi, nonummy eget tristique non,
-                            rhoncus non leo. Aliquam erat volutpat.</p>
-                        <hr class="w-75 mx-auto">
-                        <ul class="list-unstyled text-start">
-                            <li class="m-2 ms-3">
-                                <i class="bi-check-circle-fill me-2"></i>View Site Activity
-                            </li>
-                            <li class="m-2 ms-3">
-                                <i class="bi-check-circle-fill me-2"></i>View Members Directory
-                            </li>
-                            <li class="m-2 ms-3">
-                                <i class="bi-check-circle-fill me-2"></i>Access to Groups Directory
-                            </li>
-                            <li class="m-2 ms-3">
-                                <i class="bi-check-circle-fill me-2"></i>Premium Online Course
-                            </li>
-                            <li class="m-2 ms-3">
-                                <i class="bi-check-circle-fill me-2"></i>Online and Phone Support
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card-footer text-muted d-flex ">
-                        <a href="#" class="btn btn-success flex-grow-1">Register</a>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
+                    {% endfor %}
     </div>
 </section>
 <div class="container-fluid py-4" style="background-color: #F0F5F6;">

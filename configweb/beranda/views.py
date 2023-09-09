@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from beranda.forms import FormDaftar
 from django.contrib import messages
+from beranda.forms import FormDaftar
+from backend.models import Promosi
 # Create your views here.
 
 def beranda(request):
+    promosi = Promosi.objects.all().order_by('-pk')
     if request.POST:
         form = FormDaftar(request.POST, request.FILES)
         if form.is_valid:
@@ -13,11 +15,13 @@ def beranda(request):
             context ={
                 'title':'Beranda | UKMandiri',
                 'form':form,
+                'promosi':promosi
                 }
             return render(request,'beranda/beranda.html',context) 
     else:
+        promosi = Promosi.objects.all().order_by('-pk')
         form = FormDaftar()
-        return render(request,'beranda/beranda.html',{'form':form})
+        return render(request,'beranda/beranda.html',{'form':form,'promosi':promosi})
 
     
 def daftar(request):

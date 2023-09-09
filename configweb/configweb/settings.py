@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-1f_zgzu*z&-olyv6^dy1rlz4$vqic)ee!70z*ad8p+%jh-@%%n"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True 
 
 ALLOWED_HOSTS = []
 
@@ -129,3 +129,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'masuk'

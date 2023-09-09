@@ -9,5 +9,6 @@ urlpatterns = [
     path('edit-promosi/<int:id_promosi>/', views.edit_promosi, name='edit-promosi'),
     path('hapus-promosi/<int:id_promosi>/', views.hapus_promosi, name='hapus-promosi'),
     path('detail-promosi/', views.detail_promosi, name='detail-promosi'),
+    path('export/xls/', views.export_xls, name='export_xls')
     
 ]

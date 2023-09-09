@@ -10,3 +10,11 @@ class Promosi(models.Model):
     def __str__(self):
         return self.judul
 
+
+class Banner(models.Model):
+    judul       =models.CharField(max_length=200)
+    ket_pendek  =models.TextField()
+    keterangan  =models.TextField()
+    slidshow    =models.ImageField(upload_to='slidshow/')
+    def __str__(self):
+        return self.judul + str(self.pk)
