@@ -21,7 +21,17 @@ def beranda(request):
 
     
 def daftar(request):
-    context ={
-        'title':'Daftar'
-    }
-    return render(request,'beranda/beranda.html',context)
+    if request.POST:
+        form = FormDaftar(request.POST, request.FILES)
+        if form.is_valid:
+            form.save()
+            messages.success(request,'Terimakasih, Kami akan memverifikasi Data Anda terlebih dahulu')
+            form = FormDaftar()
+            context ={
+                'title':'Beranda | UKMandiri',
+                'form':form,
+                }
+            return render(request,'beranda/daftar.html',context) 
+    else:
+        form = FormDaftar()
+        return render(request,'beranda/daftar.html',{'form':form})

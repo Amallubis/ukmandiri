@@ -1,0 +1,46 @@
+{% extends "backend/master.html" %}
+
+{% block dashboard %}
+<div class="container">
+    <div class="row">
+        <div class="col py-3">
+            {% for message in messages  %}
+                    {% if message %}
+                        <div class="alert alert-success">{{message}}</div> 
+                    {% endif %}
+              
+            {% endfor %}
+            <table class="table table-striped table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th>Judul</th>
+                        <th>Link</th>
+                        <th>Keterangan</th>
+                        <th>Logo</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for p in promosi  %}
+                    <tr>
+                        <th>{{p.judul}}</th>
+                        <th>{{p.link}}</th>
+                        <th>{{p.keterangan}}</th>
+                        <th>
+                            <img src="{{p.logo.url}}" alt="" srcset="" style="height: 150px; width:150px">
+                        </th>
+                        <th>
+                            <a href="{% url 'hapus-promosi' p.id %}" class="btn btn-danger">Hapus</a>
+                            <br>
+                            <br>
+                            <a href="{% url 'edit-promosi' p.id %}" class="btn btn-success">Edit</a>
+                        </th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+  
+{% endblock dashboard %}

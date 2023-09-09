@@ -4,7 +4,7 @@
 {% block contents %}
 <!-- SHOWOFF 1 -->
 <hr>
-    <div class="container-fluid bg-light" data-aos="fade-up" >
+    <div class="container-fluid" data-aos="fade-up" style="background-color: #F0F5F6;">
         <div class="row">
             <div class="col">
                 <div class="container">
@@ -17,11 +17,11 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
                     vitae, velit fugiat magni neque consectetur incidunt perspiciatis cum
                     et sapiente eaque doloremque sequi. Vero et blanditiis velit dolor.</p>
-                    <a href="http://" class="btn btn-success">Hubungin Kami <<</a>
+                    <a href="{% url 'daftar' %}" class="btn btn-success">Hubungin Kami <<</a>
 
                         </div>
             <div class="col-md-6">
-                <img src=" {% static 'img/logo.png' %}" alt="" class="img-fluid mb-3" style="height: 300px; width:300px">
+                <img src=" {% static 'img/gambar1.png' %}" alt="" class="img-fluid mb-3">
             </div>
 
                     </div>
@@ -29,68 +29,157 @@
             </div>
         </div>
     </div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <!-- PRODUCT -->
-            <section id="product" class="py-5" data-aos="fade-up">
-                <div class="container">
-                    <div class="row">
-                        <div class="col text-center">
-                            <h1>Product and Services</h1>
-                            <hr class="w-25 mx-auto">
-                            <p class="lead">
-                                Melayani berbagai koperasi Usaha Menengah
-                                </p>
-                        </div>
+<!-- MEMBERSHIP SECTION -->
+<section id="membership" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Product Kami</h1>
+                <hr class="w-25 mx-auto">
+                <p class="lead">From individuals to large enterprises, our pricing
+                    plans help learners access the depth and breadth of the expert
+                    content they need to solve in-the-moment challenges or learn for
+                    a lifetime. Compare and pick the option that’s right for you.</p>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-4 mt-4 ">
+                <div class="card text-center">
+                    <div class="card-header bg-dark text-white">
+                        <h3 class="pt-2">Kopjas-emp</h3>
                     </div>
-            
-                    <div class="row text-center justify-content-between mt-3">
-            
-                        <div class="col-sm-6 col-md-3 p-3">
-                            <i class="bi-globe"></i>
-                            <h4 class="mt-3">Website</h4>
-                            <p>Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit. Vero error temporibus tenetur cumque</p>
-                        </div>
-            
-                        <div class="col-sm-6 col-md-3 p-3">
-                            <i class="bi-file-code-fill"></i>
-                            <h4 class="mt-3">Aplikasi</h4>
-                            <p class="">Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit. Vero error temporibus tenetur cumque</p>
-                        </div>
-            
-                        <div class="col-sm-6 col-md-3 p-3">
-                            <i class="bi-palette-fill"></i>
-                            <h4 class="mt-3">Design Grafis</h4>
-                            <p class="">Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit. Vero error temporibus tenetur cumque</p>
-                        </div>
-            
-                        <div class="col-sm-6 col-md-3 p-3">
-                            <i class="bi-shield-fill-check"></i>
-                            <h4 class="mt-3">Keamanan Sistem</h4>
-                            <p class="">Lorem ipsum dolor sit, amet consectetur
-                                adipisicing elit. Vero error temporibus tenetur cumque</p>
-                        </div>
-            
+                    <div class="card-body">
+                        <img src="{% static 'img/logokopjas.png' %}" alt="" srcset="" style="height:200px; width:200px">
+                        <p class="card-text">
+                            Kopjas adalah Koperasi untuk membantu kegiatan usaha anda seperti pembuatan legal usaha
+                            </p>
+                        <hr class="w-75 mx-auto">
+                        <ul class="list-unstyled text-start">
+                            <li class="m-2 ms-3">
+                                <i class="bi-check-circle-fill me-2"></i>Pembuatan PT 
+                            </li>
+                            <li class="m-2 ms-3">
+                                <i class="bi-check-circle-fill me-2"></i>Pembuatan CV
+                            </li>
+                            <li class="m-2 ms-3">
+                                <i class="bi-check-circle-fill me-2"></i>Branding Usaha
+                            </li>
+                            <li class="m-2 ms-3">
+                                <i class="bi-check-circle-fill me-2"></i>Tax & Accounting
+                            </li>
+                            <li class="m-2 ms-3">
+                                <i class="bi-check-circle-fill me-2"></i>Virtual Office
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-muted d-flex ">
+                        <a href="https://kopjas-emp.com" class="btn btn-success flex-grow-1">Detail</a>
                     </div>
                 </div>
-            </section>
+            </div>
+
+            <div class="col-md-4 mt-4">
+                <div class="card text-center">
+                    <div class="card-header bg-dark text-white">
+                        <h3 class="pt-2">Enter Academy</h3>
+                    </div>
+                    <div class="card-body">
+                        <img src="{% static 'img/logoenter.png' %}" alt="" srcset="" style="height:200px; width:200px">
+                        <p class="card-text">Class aptent taciti sociosqu ad torquent
+                            conubia nostra, per inceptos hymenaeos.</p>
+                        <hr class="w-75 mx-auto">
+                        <ul class="list-unstyled text-start">
+                            <li class="m-2 ms-3">
+                                <i class="bi-check-circle-fill me-2"></i>View Site Activity
+                            </li>
+                            <li class="m-2 ms-3">
+                                <i class="bi-check-circle-fill me-2"></i>View Members Directory
+                            </li>
+                            <li class="m-2 ms-3">
+                                <i class="bi-check-circle-fill me-2"></i>Access to Groups Directory
+                            </li>
+                            <li class="m-2 ms-3">
+                                <i class="bi-check-circle-fill me-2"></i>Premium Online Course
+                            </li>
+                            <li class="m-2 ms-3">
+                                <i class="bi-check-circle-fill me-2"></i>Online and Phone Support
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-muted d-flex ">
+                        <a href="https://enter-academy.com" class="btn btn-success flex-grow-1">Register</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-4">
+                <div class="card text-center">
+                    <div class="card-header bg-dark text-white">
+                        <h3 class="pt-2">Koperasi</h3>
+                    </div>
+                    <div class="card-body">
+                        <img src="{% static 'img/logo.png' %}" alt="" srcset="" style="height:200px; width:200px">
+                        <p class="card-text">Morbi leo mi, nonummy eget tristique non,
+                            rhoncus non leo. Aliquam erat volutpat.</p>
+                        <hr class="w-75 mx-auto">
+                        <ul class="list-unstyled text-start">
+                            <li class="m-2 ms-3">
+                                <i class="bi-check-circle-fill me-2"></i>View Site Activity
+                            </li>
+                            <li class="m-2 ms-3">
+                                <i class="bi-check-circle-fill me-2"></i>View Members Directory
+                            </li>
+                            <li class="m-2 ms-3">
+                                <i class="bi-check-circle-fill me-2"></i>Access to Groups Directory
+                            </li>
+                            <li class="m-2 ms-3">
+                                <i class="bi-check-circle-fill me-2"></i>Premium Online Course
+                            </li>
+                            <li class="m-2 ms-3">
+                                <i class="bi-check-circle-fill me-2"></i>Online and Phone Support
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card-footer text-muted d-flex ">
+                        <a href="#" class="btn btn-success flex-grow-1">Register</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
+
     </div>
-</div>
-<div class="container py-4">
-    <div class="row">
-        <div class="col-md-6">
+</section>
+<div class="container-fluid py-4" style="background-color: #F0F5F6;">
+            <div class="container">
+                <div class="row py-3">
+                    <div class="col-md-12 text-center">
+                        <h1 style="color: darkseagreen;">Hubungi Kami</h1>
+                        <hr class="w-25 mx-auto">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 ">
+                    <h1 style="color: darkseagreen;">Ada yang bisa Kami Bantu ?</h1>
+                    <p class="lead">
+                        Silahkan isi form sebelah ini jika Anda mempunyai pertanyaan mengenai layanan yang kami berikan.
+                        </p>
+                        <p>
+                            Kami akan segera membalas pesan Anda mengenai Layanan kami.
+                        </p>
+                    </div>
+
+                    <div class="col-md-8 shadow-sm py-4">
             <form action="{% url 'beranda' %}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{form | crispy}}
-                <button type="submit" class="btn btn-primary">Kirim</button>
+                <button type="submit" class="btn btn-success">Sent Request</button>
             </form>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
 {% endblock contents %}

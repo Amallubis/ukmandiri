@@ -5,3 +5,8 @@ class FormDaftar(ModelForm):
     class Meta:
         model = Daftar
         fields = '__all__'
+        
+        labels ={
+            "nama_lengkap":"Nama Lengkap",
+            "no_hp":"No Handphone/ Whatsapp"
+        }

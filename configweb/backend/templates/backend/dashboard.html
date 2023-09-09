@@ -1,10 +1,40 @@
 {% extends "backend/master.html" %}
-
+{% load static %}
 {% block dashboard %}
-<div class="container">
+<div class="container py-4">
     <div class="row">
-        <div class="col-md-12">
-            <h2>Dashboard</h2>
+        <div class="col-md-4">
+            <div class="card" style="width: 15rem;">
+                <img src="{% static 'img/client.jpg' %}" width="200" height="200" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Daftar Client</h5>
+                    <p class="card-text">
+                        </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Jumlah Daftar : <strong>{{jumlah}}</strong></li>
+                </ul>
+                <div class="card-body">
+                    <a href="{% url 'detail' %}" class="card-link btn btn-success">Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 15rem;">
+                <img src="{% static 'img/promosi.png' %}" class="card-img-top" height="200" width="100" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Buat Promosi</h5>
+                    <p class="card-text">
+                        </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Jumlah Promosi: <strong>{{promosi}}</strong></li>
+                </ul>
+                <div class="card-body">
+                    <a href="{% url 'buat-promosi' %}" class="card-link btn btn-success">Buat Promosi</a>
+                    <a href="{% url 'detail-promosi' %}" class="card-link btn btn-success">Detail</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
