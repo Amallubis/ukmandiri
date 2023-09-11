@@ -22,6 +22,13 @@ def beranda(request):
         promosi = Promosi.objects.all().order_by('-pk')
         form = FormDaftar()
         return render(request,'beranda/beranda.html',{'form':form,'promosi':promosi})
+    
+
+def profil(request):
+    context ={
+        'title':'Tentang Kami'
+    }
+    return render(request,'beranda/profil.html',context)
 
     
 def daftar(request):

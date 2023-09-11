@@ -12,7 +12,7 @@
         </div>
         <div class="row">
             <div class="col-md-4 ">
-                <h1 style="color: darkseagreen;">Ada yang bisa Kami Bantu ?</h1>
+                <h1 style="color:#56B44C ;">Ada yang bisa Kami Bantu ?</h1>
                 <p class="lead">
                     Silahkan isi form sebelah ini jika Anda mempunyai pertanyaan mengenai layanan yang kami berikan.
                 </p>
@@ -25,7 +25,7 @@
                 <form action="{% url 'beranda' %}" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{form | crispy}}
-                    <button type="submit" class="btn btn-success">Sent Request</button>
+                    <button type="submit" class="btn btn-success"request>Sent Request</button>
                 </form>
             </div>
         </div>

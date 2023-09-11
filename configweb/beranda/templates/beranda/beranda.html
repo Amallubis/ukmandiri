@@ -3,54 +3,138 @@
 {% load crispy_forms_tags %}
 {% block contents %}
 <!-- SHOWOFF 1 -->
-<hr>
     <div class="container-fluid" data-aos="fade-up" style="background-color: #F0F5F6;">
         <div class="row">
             <div class="col">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                <h2>UKMandiri</h2>
-                <p class="lead">
-                    UKMandiri adalah sebuah Koperasi yang akan membantu anda untuk Usaha Kecil Anda
-                </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-                    vitae, velit fugiat magni neque consectetur incidunt perspiciatis cum
-                    et sapiente eaque doloremque sequi. Vero et blanditiis velit dolor.</p>
-                    <a href="{% url 'daftar' %}" class="btn btn-success">Hubungin Kami <<</a>
-
+                    <div class="row pb-4">
+                        <div class="col-md-7 pt-3">
+                            <h2 style="font-family: 'Ubuntu', sans-serif; color:#E62E2D">UKMandiri</h2>
+                            <p class="lead bold" style="font-family: 'Ubuntu', sans-serif; color:#56B44C">
+                               Wujudkan impian Anda bersama <strong style="color:#E62E2D">UKMandiri.com</strong>  
+                            </p>
+                            <p class="pb-3">
+                                UKMandiri Singkatan dari Koperasi Usaha Kecil Mandiri suatu Organisasi yang berbadan hukum Koperasi.
+                                </p>
+                                <a href="{% url 'profil' %}" class="btn btn-success">Tentang Kami<<</a>
                         </div>
-            <div class="col-md-6">
-                <img src=" {% static 'img/gambar1.png' %}" alt="" class="img-fluid mb-3">
-            </div>
+                        <div class="col-md-5">
+                            <img src=" {% static 'img/gambar1.png' %}" alt="" class="img-fluid mb-3">
+                        </div>
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+<!-- SHOWOFF 1 -->
+<section id="showoff-1" class="bg-light text-muted py-5" data-aos="fade-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src=" {% static 'img/simpan.jpg' %} " alt="" class="img-fluid mb-3">
+            </div>
+            <div class="col-md-6">
+                <h2>Simpan Pinjam</h2>
+                <p class="lead">
+                    Koperasi memberikan kemudahan untuk menambah modal usaha bagi para anggota dengan menyalurkan pinjaman sejak 2018 dengan total biaya 1 Milyar lebih
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SHOWOFF 2 -->
+<section id="showoff-2" class="text-muted py-5" data-aos="fade-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Jasa Perizinan</h2>
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aperiam cumque, esse modi maxime veniam nulla delectus dolorem
+                    inventore temporibus tempora!
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+                    ab nemo velit rem vel est dolor suscipit delectus nulla. Laboriosam
+                    ducimus est iusto maiores qui eaque nam quod perferendis reiciendis.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'img/image2.jpg' %} " alt="" class="img-fluid mb-3">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SHOWOFF 1 -->
+<section id="showoff-1" class="bg-light text-muted py-5" data-aos="fade-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src=" {% static 'img/image1.jpg' %} " alt="" class="img-fluid mb-3">
+            </div>
+            <div class="col-md-6">
+                <h2>Pendidikan</h2>
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aperiam cumque, esse modi maxime veniam nulla delectus dolorem
+                    inventore temporibus tempora!
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
+                    vitae, velit fugiat magni neque consectetur incidunt perspiciatis cum
+                    et sapiente eaque doloremque sequi. Vero et blanditiis velit dolor.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+                    ab nemo velit rem vel est dolor suscipit delectus nulla. Laboriosam
+                    ducimus est iusto maiores qui eaque nam quod perferendis reiciendis.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SHOWOFF 2 -->
+<section id="showoff-2" class="text-muted py-5" data-aos="fade-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Restoran Rumah Makan</h2>
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Aperiam cumque, esse modi maxime veniam nulla delectus dolorem
+                    inventore temporibus tempora!
+                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
+                    ab nemo velit rem vel est dolor suscipit delectus nulla. Laboriosam
+                    ducimus est iusto maiores qui eaque nam quod perferendis reiciendis.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'img/cafe.jpg' %} " alt="" class="img-fluid mb-3">
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- MEMBERSHIP SECTION -->
 <section id="membership" class="py-5">
     <div class="container">
         <div class="row">
             <div class="col text-center">
-                <h1>Product Kami</h1>
+                <h1>Unit Usaha</h1>
                 <hr class="w-25 mx-auto">
                 <p class="lead">
-                    Berikut Product yang kami tawarkan
+                    Layanan UKMandiri 
                     </p>
             </div>
         </div>
+
+
 
         <div class="row">
                     {% for p in promosi  %}
             <div class="col-md-4 mt-4 ">
                 <div class="card text-center">
-                    <div class="card-header bg-dark text-white">
+                    <div class="card-header text-white" style="background-color:#56B44C;">
                         <h3 class="pt-2">{{p.judul}}</h3>
                     </div>
                     <div class="card-body">
-                        <img src="{{p.logo.url}}" alt="" srcset="" style="height:200px; width:200px">
+                        <img src="{{p.logo.url}}" alt="" srcset="" class="img-fluid">
                         <p class="card-text">
                             {{p.keterangan}}
                             </p>

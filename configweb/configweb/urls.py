@@ -23,6 +23,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include('beranda.urls')),
     path("backend/", include('backend.urls')),
+    path("member/", include('member.urls')),
     path('masuk/', LoginView.as_view(), name='masuk'),
     path('keluar/', LogoutView.as_view(next_page='masuk'), name='keluar')
 ]
