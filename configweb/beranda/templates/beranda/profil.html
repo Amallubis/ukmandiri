@@ -10,27 +10,54 @@
                             <div class="col">
                                 <div class="container">
                                     <div class="row pb-4">
-                                        <div class="col-md-7 pt-3">
-                                            <h2 style="font-family: 'Ubuntu', sans-serif; color:#E62E2D">UKMandiri</h2>
-                                            <p class="lead bold" style="font-family: 'Ubuntu', sans-serif; color:#56B44C">
-                                                <strong style="color:#E62E2D">Profil Koperasi</strong>
-                                            </p>
+                                        <div class="col-md-8 pt-3">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h2>Profil UKMandiri</h2>
+                                                </div>
+                                                <div class="card-body">
                                             <p class="pb-3">
                                                 <h5>
-                                                <i class="bi bi-calendar-day"> <strong>Berdiri Pada 11 April 2018</strong></i>
+                                                <i class="bi bi-calendar-day"> <strong>{{profil.berdiri}}</strong></i>
                                                 </h5>
                                                 <h5>
                                                 <i class="bi bi-card-checklist">
                                                     <strong>
-                                                No Induk Koperasi : 1212300150024 
+                                                No Induk Koperasi : {{profil.noindukkoperasi}} 
+                                                    </strong>
+                                                </i>
+                                                <br>
+                                                <i class="bi bi-card-checklist">
+                                                    <strong>
+                                                Nomor Badan Hukum : {{profil.badanhukum}} 
+                                                    </strong>
+                                                </i>
+                                                <br>
+                                                <i class="bi bi-card-checklist">
+                                                    <strong>
+                                                Perizinan Berusaha Berbasis Risiko: {{profil.perizinan}} 
+                                                    </strong>
+                                                </i>
+                                                <br>
+                                                <i class="bi bi-card-checklist">
+                                                    <strong>
+                                                Kemenhumham Perubahan: {{profil.kemenhumham}} 
+                                                    </strong>
+                                                </i>
+                                                <br>
+                                                <i class="bi bi-card-checklist">
+                                                    <strong>
+                                                Kementrian Koperasi dan Usaha Kecil dan Menengah RI: {{profil.nokementrian}} 
                                                     </strong>
                                                 </i>
 
                                                 </h5>
                                             </p>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-md-5">
-                                            <img src=" {% static 'img/logomandiri.png' %}" alt="" class="img-fluid mb-3">
+                                        <div class="col-md-4">
+                                            <img src="{{profil.logo.url}}" alt="" class="img-fluid mb-3">
                                         </div>
                     
                                     </div>
@@ -45,50 +72,13 @@
     <section>
         <div class="container-fluid bg-light py-5" data-aos="fade-up" >
             <div class="row">
-                <div class="col-md-12 pt-3 pb-3">
-                    <h2 class="text-center bold">Perizinan & Legalitas</h2>
+                <div class="col-md-6 pt-3 pb-3">
+                    <h2 class="text-center bold">Visi</h2>
+                    <p>{{profil.visi}}</p>
                 </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="bold">Nomor Badan Hukum</h5>
-                        </div>
-                        <div class="card-body">
-                            <p>012233333444444444444</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="bold">Perizinan Berusaha Berbasis Risiko</h5>
-                        </div>
-                        <div class="card-body">
-                            <p>NIB : 9123445555999</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row py-5">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="bold">Kemenhumham Perubahan</h5>
-                        </div>
-                        <div class="card-body">
-                            <p>Nomor AHU-0001507 AH 01.38.Tahun 2018</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="bold">Kementrian Koperasi dan Usaha Kecil dan Menengah RI</h5>
-                        </div>
-                        <div class="card-body">
-                            <p>012233333444444444444</p>
-                        </div>
-                    </div>
+                <div class="col-md-6 pt-3 pb-3">
+                    <h2 class="text-center bold">Misi</h2>
+                    <p>{{profil.misi}}</p>
                 </div>
 
             </div>
@@ -110,90 +100,28 @@
         </div>
 
         <div class="row">
-
+{% for p in pengurus %}
             <div class="col-md-6 col-lg-3" data-aos="flip-left">
                 <div class="card">
                     <div class="card-body">
-                        <img src="{% static 'img/people1.jpg' %} " class="img-fluid rounded-circle w-50 mb-3">
-                        <h3>Pak Gomgom</h3>
-                        <h5 class="text-muted">Pengawas Koparasi</h5>
+                        <img src="{{p.foto.url}} " class="img-fluid rounded-circle w-50 mb-3">
+                        <h3>{{p.nama}}</h3>
+                        <h5 class="text-muted">{{p.jabatan}}</h5>
                         <div class="py-3">
-                            <a href="#" class="text-secondary text-decoration-none fs-5 me-4">
+                            <a href="{{p.fb}}" class="text-secondary text-decoration-none fs-5 me-4">
                                 <i class="bi-facebook"></i>
                             </a>
-                            <a href="#" class="text-secondary text-decoration-none fs-5 me-4">
-                                <i class="bi-twitter"></i>
+                            <a href="{{p.tw}}" class="text-secondary text-decoration-none fs-5 me-4">
+                                <i class="bi bi-twitter"></i>
                             </a>
-                            <a href="#" class="text-secondary text-decoration-none fs-5">
+                            <a href="{{p.ig}}" class="text-secondary text-decoration-none fs-5">
                                 <i class="bi-instagram"></i>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-6 col-lg-3" data-aos="flip-left">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="{% static 'img/people2.jpg' %} " class="img-fluid rounded-circle w-50 mb-3">
-                        <h3>Sandri Fatmala</h3>
-                        <h5 class="text-muted">Direktur</h5>
-                        <div class="py-3">
-                            <a href="#" class="text-secondary text-decoration-none fs-5 me-4">
-                                <i class="bi-facebook"></i>
-                            </a>
-                            <a href="#" class="text-secondary text-decoration-none fs-5 me-4">
-                                <i class="bi-twitter"></i>
-                            </a>
-                            <a href="#" class="text-secondary text-decoration-none fs-5">
-                                <i class="bi-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3" data-aos="flip-right">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="{% static 'img/people3.jpg' %} " class="img-fluid rounded-circle w-50 mb-3">
-                        <h3>Ocha Lestari</h3>
-                        <h5 class="text-muted">Sekretaris</h5>
-                        <div class="py-3">
-                            <a href="#" class="text-secondary text-decoration-none fs-5 me-4">
-                                <i class="bi-facebook"></i>
-                            </a>
-                            <a href="#" class="text-secondary text-decoration-none fs-5 me-4">
-                                <i class="bi-twitter"></i>
-                            </a>
-                            <a href="#" class="text-secondary text-decoration-none fs-5">
-                                <i class="bi-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3" data-aos="flip-right">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="{% static 'img/people4.jpg' %} " class="img-fluid rounded-circle w-50 mb-3">
-                        <h3>Alex Wijaya</h3>
-                        <h5 class="text-muted">Bendahara</h5>
-                        <div class="py-3">
-                            <a href="#" class="text-secondary text-decoration-none fs-5 me-4">
-                                <i class="bi-facebook"></i>
-                            </a>
-                            <a href="#" class="text-secondary text-decoration-none fs-5 me-4">
-                                <i class="bi-twitter"></i>
-                            </a>
-                            <a href="#" class="text-secondary text-decoration-none fs-5">
-                                <i class="bi-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{% endfor %}
 
         </div>
     </div>

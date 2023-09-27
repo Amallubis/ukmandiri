@@ -1,6 +1,6 @@
 from django.forms import ModelForm 
-from .models import Promosi
-from .models import Banner
+from .models import Promosi, Banner, Pengurus, Profil
+
 
 class FormPromosi(ModelForm):
     class Meta:
@@ -19,3 +19,13 @@ class FormBanner(ModelForm):
         fields = '__all__' 
 
 
+class FormPengurus(ModelForm):
+    class Meta:
+        model = Pengurus
+        fields = '__all__'
+
+        
+class FormProfil(ModelForm):
+    class Meta:
+        model = Profil
+        fields = '__all__'

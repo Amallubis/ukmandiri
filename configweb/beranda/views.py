@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib import messages
 from beranda.forms import FormDaftar
-from backend.models import Promosi
+from backend.models import Promosi, Pengurus, Profil
 # Create your views here.
 
 def beranda(request):
@@ -25,8 +25,12 @@ def beranda(request):
     
 
 def profil(request):
+    profil = Profil.objects.get(pk=1)
+    pengurus = Pengurus.objects.all()
     context ={
-        'title':'Tentang Kami'
+        'title':'Tentang Kami',
+        'pengurus':pengurus,
+        'profil':profil
     }
     return render(request,'beranda/profil.html',context)
 

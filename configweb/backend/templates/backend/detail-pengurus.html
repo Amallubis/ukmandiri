@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block dashboard %}
+<div class="container py-4">
+    <a href="{% url 'add-pengurus' %}" class="btn btn-info"> Add Pengurus</a>
+    <div class="row">
+        <div class="col-md-12 shadow-sm py-4">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Jabatan</th>
+                        <th>FB</th>
+                        <th>IG</th>
+                        <th>X</th>
+                        <th>Foto</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for d in pengurus %}
+                    <tr>
+                        <th>{{d.nama}}</th>
+                        <th>{{d.jabatan}}</th>
+                        <th>{{d.ig}}</th>
+                        <th>{{d.fb}}</th>
+                        <th>{{d.tw}}</th>
+                        <th>
+                            <img src="{{d.foto.url}}" style="height: 200px; width:200px;">
+                        </th>
+                        <th>
+                            <a href="{% url 'delete' d.id %}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                            <br>
+                            <a href="{% url 'edit-pengurus' d.id %}" class="btn btn-success"><i class="bi bi-hammer"></i>
+                        </th>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock dashboard %}

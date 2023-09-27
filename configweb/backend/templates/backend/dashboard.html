@@ -1,4 +1,4 @@
-{% extends "backend/master.html" %}
+{% extends "base.html" %}
 {% load static %}
 {% block dashboard %}
 <div class="container py-4">
@@ -23,16 +23,48 @@
             <div class="card" style="width: 15rem;">
                 <img src="{% static 'img/promosi.png' %}" class="card-img-top" height="200" width="100" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Buat Promosi</h5>
+                    <h5 class="card-title text-center">Buat Koperasi Baru</h5>
                     <p class="card-text">
                         </p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Jumlah Promosi: <strong>{{promosi}}</strong></li>
+                    <li class="list-group-item">Jumlah Koperasi: <strong>{{promosi}}</strong></li>
                 </ul>
                 <div class="card-body">
-                    <a href="{% url 'buat-promosi' %}" class="card-link btn btn-success">Buat</a>
+                    <a href="{% url 'buat-promosi' %}" class="card-link btn btn-success">Add</a>
                     <a href="{% url 'detail-promosi' %}" class="card-link btn btn-success">Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" style="width: 15rem;">
+                <img src="{% static 'img/bos.jpg' %}" class="card-img-top" height="200" width="100" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Pengurus</h5>
+                    <p class="card-text">
+                        </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Jumlah Pengurus: <strong>{{jmlpengurus}}</strong></li>
+                </ul>
+                <div class="card-body">
+                    <a href="{% url 'add-pengurus' %}" class="card-link btn btn-success">Add</a>
+                    <a href="{% url 'detail-pengurus' %}" class="card-link btn btn-success">Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 py-5">
+            <div class="card" style="width: 15rem;">
+                <img src="{% static 'img/home.png' %}" class="card-img-top" height="200" width="100" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Profil</h5>
+                    <p class="card-text">
+                        </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                </ul>
+                <div class="card-body">
+                    <a href="{% url 'profil' %}" class="card-link btn btn-success">Update</a>
                 </div>
             </div>
         </div>

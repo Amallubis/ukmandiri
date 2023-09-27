@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.contrib import messages
 from beranda.models import Daftar
-from backend.models import Promosi, Banner
-from backend.forms import FormPromosi, FormBanner
+from backend.models import Promosi, Banner, Pengurus, Profil
+from backend.forms import FormPromosi, FormBanner, FormPengurus, FormProfil
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from backend.resource import DaftarResource
@@ -19,10 +19,12 @@ def export_xls(request):
 def dashboard(request):
     jumlah= Daftar.objects.count()
     promosi = Promosi.objects.count()
+    jmlpengurus= Pengurus.objects.count()
     context ={
         'title':'Dashboard',
         'jumlah':jumlah,
-        'promosi':promosi
+        'promosi':promosi,
+        'jmlpengurus':jmlpengurus
     }
     return render(request,'backend/dashboard.html',context)
 
@@ -87,4 +89,66 @@ def detail_promosi(request):
         'promosi':promosi
     }
     return render(request,'backend/detail-promosi.html',context)
+
+
+
+
+
+@login_required(login_url=settings.LOGIN_URL)
+def detail_pengurus(request):
+    pengurus =Pengurus.objects.all()
+    return render(request,'backend/detail-pengurus.html',{'pengurus':pengurus})
+
+
+@login_required(login_url=settings.LOGIN_URL)
+def add_pengurus(request):
+    if request.POST:
+        form = FormPengurus(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Berhasil menambahkan pengurus')
+            return render(request,'backend/add-pengurus.html',{'form':form})
+    else:
+        form = FormPengurus()
+        return render(request,'backend/add-pengurus.html',{'form':form})
+
         
+@login_required(login_url=settings.LOGIN_URL)
+def edit_pengurus(request,id_edit):
+    if request.POST:
+        pengurus = Pengurus.objects.get(id = id_edit)
+        form = FormPengurus(request.POST, request.FILES, instance=pengurus)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Berhasil di Update')
+            form = FormPengurus(instance=pengurus)
+            pengurus = Pengurus.objects.get(id=id_edit)
+            return render(request,'backend/edit-pengurus.html',{'form':form,'pengurus':pengurus})
+    else:
+        pengurus = Pengurus.objects.get(id=id_edit)
+        form = FormPengurus(instance=pengurus)
+        return render(request,'backend/edit-pengurus.html',{'form':form,'pengurus':pengurus})
+
+
+@login_required(login_url=settings.LOGIN_URL)
+def delete_pengurus(request,id_delete):
+    pengurus = Pengurus.objects.get(id=id_delete)
+    pengurus.delete()
+    return redirect('detail-pengurus')
+
+
+
+def profil(request):
+    if request.POST:
+        p = Profil.objects.get(pk=1)
+        form = FormProfil(request.POST,request.FILES, instance=p) 
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Berhasil diupdate')
+            form = FormProfil(instance=p)
+            return render(request,'backend/profil.html',{'form':form})
+    else:
+        p = Profil.objects.get(pk=1)
+        form = FormProfil(instance=p)
+        return render(request,'backend/profil.html',{'form':form})
+    

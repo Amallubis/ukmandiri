@@ -1,4 +1,4 @@
-{% extends "backend/master.html" %}
+{% extends "base.html" %}
 {% load static %}
 {% block dashboard %}
 <div class="container py-4">
@@ -15,26 +15,26 @@
                         <th>Email</th>
                         <th>No Hp</th>
                         <th>Keterangan</th>
-                        <th>Identitas</th>
+                        <th>Identitas KTP</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     {% for d in daftar  %}
                     <tr>
-                        <th>{{d.tanggal}}</th>
-                        <th>{{d.nama_lengkap}}</th>
-                        <th>{{d.email}}</th>
-                        <th>{{d.no_hp}}</th>
-                        <th>{{d.keterangan}}</th>
-                        <th>
+                        <td>{{d.tanggal}}</td>
+                        <td>{{d.nama_lengkap}}</td>
+                        <td>{{d.email}}</td>
+                        <td>{{d.no_hp}}</td>
+                        <td>{{d.keterangan}}</td>
+                        <td>
                             <img src="{{d.upload_ktp.url}}" style="height: 200px; width:200px;">
-                        </th>
-                        <th>
+                        </td>
+                        <td>
                             <a href="{% url 'delete' d.id %}" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                             <br>
                             <a href="{{d.upload_ktp.url}}" class="btn btn-success" download><i class="bi bi-cloud-download-fill"></i>
-                        </th>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
