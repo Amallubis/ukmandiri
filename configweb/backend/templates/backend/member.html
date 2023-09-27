@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% load static %}
+{% block dashboard %}
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-12 mb-2">
+            <a href="{% url 'export_member_xls' %}" class="btn btn-success"> export.xls</a>
+        </div>
+        <div class="col-md-12 col-lg-12 shadow-sm py-4">
+            <table class="table table-bordered table-responsive">
+                <thead>
+                    <tr>
+                        <th>Nama Lengkap</th>
+                        <th>Jenis Kelamin</th>
+                        <th>Agama</th>
+                        <th>Tempat Lahir</th>
+                        <th>Tanggal Lahir</th>
+                        <th>Alamat Lengkap</th>
+                        <th>Kecamatan</th>
+                        <th>Kota</th>
+                        <th>Provinsi</th>
+                        <th>No Hp</th>
+                        <th>No KTP</th>
+                        <th>Pekerjaan</th>
+                        <th>Status dalam Keluarga</th>
+                        <th>Nama Orang Tua</th>
+                        <th>No Hp Pasangan</th>
+                        <th>KTP</th>
+                        <th>Foto Pas Photo</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for d in member %}
+                    <tr>
+                        <td>{{d.nama_lengkap}}</td>
+                        <td>{{d.jenis_kelamin}}</td>
+                        <td>{{d.agama}}</td>
+                        <td>{{d.tempat_lahir}}</td>
+                        <td>{{d.tanggal_lahir}}</td>
+                        <td>{{d.alamat_lengkap}}</td>
+                        <td>{{d.kecamatan}}</td>
+                        <td>{{d.kota}}</td>
+                        <td>{{d.provinsi}}</td>
+                        <td>{{d.no_hp}}</td>
+                        <td>{{d.no_ktp}}</td>
+                        <td>{{d.pekerjaan}}</td>
+                        <td>{{d.status_dalam_keluarga}}</td>
+                        <td>{{d.nama_orang_tua}}</td>
+                        <td>{{d.no_hp_pasangan}}</td>
+                        <td>
+                            <img src="{{d.upload_ktp.url}}" style="height: 200px; width:200px;">
+                        </td>
+                        <td>
+                            <img src="{{d.upload_pas_foto.url}}" style="height: 200px; width:200px;">
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock dashboard %}

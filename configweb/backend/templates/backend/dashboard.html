@@ -64,7 +64,22 @@
                 <ul class="list-group list-group-flush">
                 </ul>
                 <div class="card-body">
-                    <a href="{% url 'profil' %}" class="card-link btn btn-success">Update</a>
+                    <a href="{% url 'edit-profil' %}" class="card-link btn btn-success">Update</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 py-5">
+            <div class="card" style="width: 15rem;">
+                <img src="{% static 'img/home.png' %}" class="card-img-top" height="200" width="100" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Member</h5>
+                    <p class="card-text">
+                        </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                </ul>
+                <div class="card-body">
+                    <a href="{% url 'member' %}" class="card-link btn btn-success">Detail</a>
                 </div>
             </div>
         </div>

@@ -6,7 +6,14 @@ from backend.forms import FormPromosi, FormBanner, FormPengurus, FormProfil
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from backend.resource import DaftarResource
+from backend.resource import MemberResource
 
+def export_member_xls(request):
+    member = MemberResource()
+    dataset = member.export()
+    response = HttpResponse(dataset.xls, content_type='application/vnd.ms-excel')
+    response['Content-Disposition'] = 'attachment; filename=member.xls'
+    return response
 
 def export_xls(request):
     daftar = DaftarResource()
@@ -138,7 +145,7 @@ def delete_pengurus(request,id_delete):
 
 
 
-def profil(request):
+def edit_profil(request):
     if request.POST:
         p = Profil.objects.get(pk=1)
         form = FormProfil(request.POST,request.FILES, instance=p) 
@@ -146,9 +153,9 @@ def profil(request):
             form.save()
             messages.success(request,'Berhasil diupdate')
             form = FormProfil(instance=p)
-            return render(request,'backend/profil.html',{'form':form})
+            return render(request,'backend/edit-profil.html',{'form':form})
     else:
         p = Profil.objects.get(pk=1)
         form = FormProfil(instance=p)
-        return render(request,'backend/profil.html',{'form':form})
+        return render(request,'backend/edit-profil.html',{'form':form})
     

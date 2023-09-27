@@ -4,6 +4,11 @@ from member.models import Member
 from member.forms import FormAddMember
 
 # Create your views here.
+def member(request):
+    member = Member.objects.all().order_by('-pk')
+    return render(request,'backend/member.html',{'member':member})
+
+    
 
 def add_member(request):
     if request.POST:
@@ -20,3 +25,5 @@ def add_member(request):
     else:
         form = FormAddMember()
         return render(request,'member/add-member.html',{'form':form})
+    
+    

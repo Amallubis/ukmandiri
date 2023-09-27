@@ -22,13 +22,13 @@ class Member(models.Model):
     agama = models.CharField(max_length=10, choices=AGAMA, default='Islam')
     tempat_lahir = models.CharField(max_length=300,blank=True)
     tanggal_lahir = models.DateField(help_text='Tanggal Lahir', default='1988/01/01')
-    alamat_lengkap = models.CharField(max_length=400, blank=True, default='-')
-    kecamatan = models.CharField(max_length=200,default='-')
-    kota = models.CharField(max_length=200, default='-')
-    provinsi = models.CharField(max_length=300, default='-')
+    alamat_lengkap = models.CharField(max_length=400, blank=True, default='')
+    kecamatan = models.CharField(max_length=200,default='')
+    kota = models.CharField(max_length=200, default='')
+    provinsi = models.CharField(max_length=300, default='')
     no_hp = models.CharField(max_length=12,default='+62')
-    no_ktp = models.CharField(max_length=20, default='-')
-    pekerjaan = models.CharField(max_length=300,default='-')
+    no_ktp = models.CharField(max_length=20, default='')
+    pekerjaan = models.CharField(max_length=300,default='')
     KELUARGA =[
         ('Suami','Suami'),
         ('Istri','Istri'),
@@ -41,10 +41,10 @@ class Member(models.Model):
         
     ]
     status_dalam_keluarga = models.CharField(max_length=200, choices=KELUARGA, default='Suami')
-    nama_orang_tua = models.CharField(max_length=200,default='-')
-    no_hp_pasangan = models.CharField(max_length=12, default='-')
-    upload_ktp      =models.ImageField(upload_to='uploadktp/', default='-')
-    upload_pas_foto =models.ImageField(upload_to='uploadpasfoto/', default='-')
+    nama_orang_tua = models.CharField(max_length=200,default='')
+    no_hp_pasangan = models.CharField(max_length=12, default='')
+    upload_ktp      =models.ImageField(upload_to='uploadktp/', default='')
+    upload_pas_foto =models.ImageField(upload_to='uploadpasfoto/', default='')
 
 
     def __str__(self):
